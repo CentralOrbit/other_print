@@ -215,13 +215,13 @@ class _RecordLabelState extends State<RecordLabelWidget> {
                                   printInfo.macAddress = printers.single.macAddress;
                                   IMG.Image decodedOriginalImage = IMG.decodePng(_currentImage)!;
 
-                                  List.generate(min(data.rows.length, 4), (index) {
+                                  List.generate(data.rows.length, (index) {
                                     if (index == data.rows.length - 1) {
                                       printInfo.isAutoCut = true;
                                       printInfo.isHalfCut = false;
                                     }
                                     IMG.Image decodedCopy = IMG.Image.from(decodedOriginalImage);
-                                    IMG.Image newResult = IMG.drawStringCentered(decodedCopy, IMG.arial_48, data.rows[index]['firstName'], color: 0x000000 );
+                                    IMG.Image newResult = IMG.drawStringCentered(decodedCopy, IMG.arial_48, data.rows[index]['firstName'], color: 0xFF000000 );
                                     final pngResult = IMG.encodePng(newResult);
 
                                     UI.decodeImageFromList(Uint8List.fromList(pngResult), (printImage) async {
