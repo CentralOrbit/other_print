@@ -1,2 +1,2 @@
 # other-print
-Other Pritner
+Other Printer
